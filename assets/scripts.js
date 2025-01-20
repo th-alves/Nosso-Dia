@@ -1,3 +1,12 @@
+window.addEventListener('load', () => {
+  const playButton = document.getElementById('play-button');
+  const music = document.getElementById('background-music');
+
+  playButton.addEventListener('click', () => {
+    music.play(); playButton.style.display = 'none';
+  });
+})
+
 let slideIndex = 0;
 const slides = document.querySelector('.slides');
 const totalSlides = slides.children.length;
