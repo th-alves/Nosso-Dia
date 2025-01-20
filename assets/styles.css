@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Pacifico:regular);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script:regular,500,600,700);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFB6C1; /* Cor de fundo */
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Importante para que as bolhas não criem barras de rolagem */
+}
+
+.carousel {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px 0;
+  overflow: hidden;
+  border-radius: 10px;
+
+  -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.slides img {
+  width: 100%;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: 30%;
+}
+
+.next {
+  right: 30%;
+}
+
+@media screen and (width <= 768px) {
+  .prev {
+    left: 5px;
+  }
+
+  .next {
+    right: 5px;
+  }
+}
+
+.divisor {
+  font-size: 1.5rem;
+}
+
+#timer {
+  padding-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #000;
+  text-align: center;
+  font-family: "Pacifico", sans-serif;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+#date-part,
+#time-part {
+  margin: 1rem 0;
+}
+
+#message {
+  font-family: "Dancing Script", sans-serif;
+  font-size: 2.5rem;
+  color: #FFFFFF;
+  margin: 20px;
+}
+
+.hearts {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.heart {
+  position: fixed;
+  bottom: -50px;
+  font-size: 24px;
+  animation: rise 5s linear infinite;
+}
+@keyframes rise {
+  0% {
+    bottom: -50px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
